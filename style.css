@@ -363,7 +363,7 @@
 }
 .container1 {  display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2fr 2fr 2fr 2fr 1fr ;
+    grid-template-rows: 2fr 2fr 2fr 1fr;
     grid-auto-columns: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -372,7 +372,6 @@
       ". bb2 . ."
       ". . bb3 ."
       ". bb4 . ."
-      ". . bb5 ."
       ;
   }
   
@@ -380,10 +379,13 @@
         background-image: url('images/bubble1.webp');
         width: 500px;
         height: 420px;
+        padding: 80px 120px 0px 120px;
 }
-.bb1::before{
+.bb1::after{
     content: url('images/sbub3.webp');
-    margin-left: -890px;
+    margin-left: -600px;
+    margin-top: -300px;
+    position: absolute;
     width: 185px;
     height: 304px;
     
@@ -400,18 +402,14 @@
     height: 304px;
     margin-left: 400px;
 }
-.bb5::after{
-    content: url('images/sbub.webp');
-    width: 185px;
-    height: 304px;
-    margin-left: -700px;
-}
+
   
 .bb2 { grid-area: bb2;
 background-image: url('images/bubble2.webp');
 margin-top: 35px;
 width: 403px;
-height: 400px;}
+height: 400px;
+padding: 50px 0px 50px 60px;}
 
 .bb3 { grid-area: bb3;
 background-image: url('images/bubble3.webp');
@@ -427,13 +425,7 @@ margin-left: 70px;
 width: 438px;
 height: 456px; }
 
-.bb5 { grid-area: bb5;
-background-image: url('images/bubble5.webp');
-width: 357px;
-height: 357px;
-margin-top: -300px;
-margin-left: 80px;
-}
+
 .c-bubble{
     object-fit: cover;
     background-repeat: no-repeat;
@@ -459,7 +451,7 @@ margin-left: 80px;
         margin-top: 0px;
         margin-left: 0px;
     }   
-    .bb1::after,.bb2::after,.bb4::after,.bb5::after{
+    .bb1::after,.bb2::after,.bb4::after{
         display: hidden;
     }
     .rb{
@@ -470,13 +462,41 @@ margin-left: 80px;
     }
     .container1{
         grid-template-columns: 1fr 1fr 1fr 1fr; 
-        grid-template-rows: 2fr 2fr 2fr 2fr 2fr ;
+        grid-template-rows: 2fr 2fr 2fr 2fr;
         overflow: hidden;
     }
     .home3text{
         padding-top: 80px;
-        
     }
+    .img-label img{
+      height: 30px;
+    }
+    .label label{
+      font-size: 10px;
+    }
+    .img-label{
+      margin-left: -80px;
+      line-height: 15px;
+      width: 400px;
+      margin-top: -15px;
+
+    }
+    .bb1 span{
+      font-size: 14px;
+      line-height: 16px;
+      width: 170px;
+      margin-left: -80px;
+      margin-top: -10px;
+    }
+   
+}
+
+
+.bb-bigtext{
+  text-align: left; 
+  display: flex; 
+  letter-spacing: -0.5px; 
+  line-height: 35px
 }
 .home3text{
     padding-bottom: 80px;
@@ -873,7 +893,7 @@ padding: 0px 0px 0px 80px; }
       padding: 50px 0px 50px 0px;
     }
     section{
-      height: 130vh;
+      height: 145vh;
     }
 
     .ab1{
@@ -1006,5 +1026,102 @@ background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #c
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
 background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+  
+  .img-label{
+    display: flex;
+  }
+  .label{
+    display: flex;
+    flex-direction: column;
+    text-align: left ;
+    padding-left: 10px;
+  }
+  
+  @media screen and (max-width:470px) {
+  .bb2 span{
+    font-size: 14px;
+    line-height: 16px;
+      width: 170px;
+  }
+  .bb2{
+    display: flex;
+    flex-direction: column;
+  }
+  .bb2 .img-label1{
+    margin-left: -40px;
+    margin-top: 0px;
+  }
+  .bb2 span{
+    margin-left: -30px;
+    margin-top: -10px;
+  }
+  .img-label1 img{
+    height: 30px;
+    margin-top: 8px;
+
+  }
+  .img-label2 img{
+    height: 30px;
+    margin-top: 8px;
+
+  }
+  .bb3 {
+    display: flex;
+    flex-direction: column;
+  }
+  .bb3 span{
+    font-size: 14px;
+    line-height: 16px;
+      width: 170px;
+    margin-left: -40px;
+    margin-top: -8px;
+  }
+  .img-label2{
+    display: flex;
+    width: 220px;
+    margin-top: -45px;
+  }
+
+  .img-label3 img{
+    height: 30px;
+    margin-top: 5px;
+  }
+  .bb4 {
+    display: flex;
+    flex-direction: column;
+  }
+  .bb4 span{
+    font-size: 14px;
+    line-height: 16px;
+      width: 160px;
+    margin-left: -70px;
+    margin-top: -8px;
+  }
+  .img-label3{
+    display: flex;
+    width: 220px;
+    margin-top: -45px;
+    margin-left: -80px;
+  }
+  }
+
+
+  .img-label1{
+    display: flex;
+    margin-top: 40px;
+  }
+  .img-label2{
+    display: flex;
+    padding-top: 80px;
+  }
+  .bb3{
+    padding: 10px 50px 0px 80px;
+  }
+  .img-label3{
+    display: flex;
+  }
+  .bb4{
+    padding:100px  ;
   }
   
